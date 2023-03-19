@@ -51,8 +51,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .csrf().disable() // 내가 만든 토큰을 사용하기 때문에 csrf설정은 disable로 한다.
 
                 .exceptionHandling() // exceptionHandling할 때 내가 만든 클래스들을 추가한다.
-                .authenticationEntryPoint(jwtAuthenticationEntryPoint)
-                .accessDeniedHandler(jwtAccessDeniedHandler)
+                .authenticationEntryPoint(jwtAuthenticationEntryPoint) // 인증되지 않은 사용자가 보호된 리소스에 액세스하려고 할 때 호출
+                .accessDeniedHandler(jwtAccessDeniedHandler) // 인증된 사용자가 리소스에 액세스할 권한이 없는 경우 호출
 
                 .and() // h2-console을 위한 설정 추가
                 .headers()
