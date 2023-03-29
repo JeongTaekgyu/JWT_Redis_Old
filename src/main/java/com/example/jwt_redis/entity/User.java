@@ -36,7 +36,10 @@ public class User {
     @Column(name = "activated")
     private boolean activated;
 
-    // User 객체와 권한객체의 다대다 관계를, 일대다, 다대일 관계의 조인 테이블로 정의했다.
+    // User 객체와 권한객체의 다대다 관계를, 일대다, 다대일 관계의 조인 테이블로 정의함.
+    // user_authority 라는 중간 테이블이 생성됨
+    // 이 테이블은 user_id 컬럼과 authority_name 컬럼을 가지고 있음.
+    // user_id 컬럼은 User클래스의 기본키(PK)와 외래키(FK)로 매핑되고, authority_name 컬럼은 Authority 클래스의 기본키(PK)와 외래키(FK)로 매핑됨
     @ManyToMany
     @JoinTable(
             name = "user_authority",

@@ -68,6 +68,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/api/hello").permitAll() // 해당 api에 대한 요청을 인증없이 접근을 허용하겠다.
                 .antMatchers("/api/authenticate").permitAll()
                 .antMatchers("/api/signup").permitAll()
+//                .antMatchers("/api/redisTest").permitAll()
+                .antMatchers("/api/redisTest/**").permitAll()
                 .anyRequest().authenticated() // 나머지 요청들은 모두 인정되어야 한다.
 
                 .and()

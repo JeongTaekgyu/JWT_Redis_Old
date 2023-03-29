@@ -18,6 +18,15 @@ spring:
       hibernate:
         format_sql: true
         show_sql: true
+  redis:
+    lettuce:
+      pool:
+        max-active: 10
+        max-idle: 10
+        min-idle: 2
+    port: 6379
+    host: localhost
+    password: '1234'
 
 logging:
   level:
@@ -26,4 +35,4 @@ logging:
 jwt:
   header: Authorization
   secret: c2lsdmVybmluZS10ZWNoLXNwcmluZy1ib290LWp3dC10dXRvcmlhbC1zZWNyZXQtc2lsdmVybmluZS10ZWNoLXNwcmluZy1ib290LWp3dC10dXRvcmlhbC1zZWNyZXQK
-  token-validity-in-seconds: 86400 # ?? ???? 86400?
+  token-validity-in-seconds: 86400 # token만료시간을 86400초로 설정
