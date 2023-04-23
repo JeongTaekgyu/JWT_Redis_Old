@@ -16,7 +16,7 @@ public class RedisController {
 
     @PostMapping("/redisTest")
     public ResponseEntity<?> addRedisKey() {
-        ValueOperations<String, String> vop = redisTemplate.opsForValue();
+        ValueOperations<String, String> vop = redisTemplate.opsForValue(); // opsForValue메서드는 기본적인 get,set을 도와주는 메서드이다.
         vop.set("yellow", "banana");
         vop.set("red", "apple");
         vop.set("green", "watermelon");

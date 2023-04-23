@@ -18,6 +18,8 @@ spring:
       hibernate:
         format_sql: true
         show_sql: true
+    defer-datasource-initialization: true # data.sql 동작하기 위한 설정
+  # 나는 따로 spring.redis.url 설정은 필요없고 docker로 redis를 실행 시켰기 때문에 아래 정보로 커넥션해줬다.
   redis:
     lettuce:
       pool:
